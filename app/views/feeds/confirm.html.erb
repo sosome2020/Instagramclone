@@ -1,0 +1,9 @@
+<h3>Send with the following contents.</h3>
+<%= form_with(model: @feed, url: feeds_path, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.hidden_field :image_cache %>
+  <p>Title:<%= @feed.content %></p>
+  <p>Content:<%= image_tag @feed.image.url %></p>
+  <%= form.submit  "confirm process" %>
+<% end %>
+<%= link_to 'Return', :back %>
