@@ -1,0 +1,6 @@
+2020-12-07 17:06:37.051 JST [1318] FATAL:  pre-existing shared memory block (key 4894131, ID 327680) is still in use
+2020-12-07 17:06:37.051 JST [1318] HINT:  Terminate any old server processes associated with data directory "/usr/local/var/postgres".
+2020-12-07 17:06:37.052 JST [1318] LOG:  database system is shut down
+2020-12-07 17:07:07.561 JST [1326] FATAL:  pre-existing shared memory block (key 4894131, ID 327680) is still in use
+2020-12-07 17:07:07.561 JST [1326] HINT:  Terminate any old server processes associated with data directory "/usr/local/var/postgres".
+2020-12-07 17:07:07.561 JST [1326] LOG:  database system is shut down
