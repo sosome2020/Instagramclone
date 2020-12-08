@@ -1,6 +1,6 @@
 body {
   background-color: #fff;
-  color: #333;
+  color: #000000;
   margin: 33px; }
 
 body, p, ol, ul, td {
@@ -67,11 +67,12 @@ label {
   .first {float: right;
 }
 
-img {width:150px;
+img {width:120px;
   height: 80px
 }
+
 .header {
-  background-color: #4267b2;
+  background-color: #ea72a8;
   height: 80px;
   font-size: 1.0rem;
 }
@@ -87,7 +88,7 @@ img {width:150px;
   height: 50px;
   position: absolute;
   bottom: 0;
-  background-color: #4267b2;
+  background-color: #d8bfd8;
   display: table;
 
 }

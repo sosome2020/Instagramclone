@@ -12,7 +12,9 @@
   <body>
     <header class="header">
       <div class="first">
-        <%= image_tag("facebook.png") %>
+        <button type="button" class="btn btn-primary btn-xs"><%= link_to "Sign up", new_user_path %></button>
+      <button type="button" class="btn btn-primary btn-xs"><%= link_to "Login", new_session_path %></button>
+        <%= image_tag("instagram.png") %>
       </div>
     </header>
 
@@ -20,17 +22,16 @@
  <%= content_tag(:div, value, class: "#{key}") %>
  <% end %>
  <% if logged_in? %>
-  <button type="button" class="btn btn-info"> <%= link_to "Posts", feeds_path(current_user.id) %>    </button>
-  <button type="button" class="btn btn-info"><%= link_to "Profile", user_path(current_user.id) %></button>
-  <button type="button" class="btn btn-info"><%= link_to "Favorite", favorites_path%></button>
-  <button type="button" class="btn btn-danger"><%= link_to "Logout", session_path(current_user.id), method: :delete %></button>
+  <button type="button" class="btn btn-info btn-xs"><%= link_to "Posts", feeds_path(current_user.id) %></button>
+  <button type="button" class="btn btn-primary btn-xs"><%= link_to "Profile", user_path(current_user.id) %></button>
+  <button type="button" class="btn btn-primary btn-xs"><%= link_to "Favorite", favorites_path%></button>
+  <button type="button" class="btn btn-primary btn-xs"><%= link_to "Logout", session_path(current_user.id), method: :delete %></button>
+
   <% else %>
-  <button type="button" class="btn btn-warning"><%= link_to "Sign up", new_user_path %></button>
-  <button type="button" class="btn btn-primary"> <%= link_to "Login", new_session_path %></button>
   <% end %>
   <%= yield %>
   <footer class="footer">
-    <p>Copyright © 2020 Facebookclone inc, All RIGHTS RESERVED.</p>
+    <p>Copyright © 2020 Instagramclone inc, All RIGHTS RESERVED.</p>
   </footer>
   </body>
 </html>
