@@ -12,20 +12,20 @@
   <body>
     <header class="header">
       <div class="first">
-        <button type="button" class="btn btn-primary btn-xs"><%= link_to "Sign up", new_user_path %></button>
+        <button type="button" class="btn btn-warning btn-xs"><%= link_to "Sign up", new_user_path %></button>
       <button type="button" class="btn btn-primary btn-xs"><%= link_to "Login", new_session_path %></button>
         <%= image_tag("instagram.png") %>
       </div>
-    </header>
+</header>
 
  <% flash.each do |key, value| %>
  <%= content_tag(:div, value, class: "#{key}") %>
  <% end %>
  <% if logged_in? %>
-  <button type="button" class="btn btn-info btn-xs"><%= link_to "Posts", feeds_path(current_user.id) %></button>
-  <button type="button" class="btn btn-primary btn-xs"><%= link_to "Profile", user_path(current_user.id) %></button>
-  <button type="button" class="btn btn-primary btn-xs"><%= link_to "Favorite", favorites_path%></button>
-  <button type="button" class="btn btn-primary btn-xs"><%= link_to "Logout", session_path(current_user.id), method: :delete %></button>
+ <%= link_to "Posts", feeds_path(current_user.id) %>
+ <%= link_to "Profile", user_path(current_user.id)%>
+ <%= link_to "Favorite", favorites_path%>
+  <%= link_to "Logout", session_path(current_user.id), method: :delete %>
   <% else %>
   <% end %>
   <%= yield %>
