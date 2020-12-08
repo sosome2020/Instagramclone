@@ -14,6 +14,9 @@ class FeedsController < ApplicationController
   end
 
   def edit
+    if current_user.id != @feed.user.id
+      redirect_to feeds_url, notice: "You cannot edit other user's post"
+    end
   end
 
   def create
@@ -47,10 +50,14 @@ class FeedsController < ApplicationController
   end
 
   def destroy
+    if current_user.id != @feed.user.id
+      redirect_to feeds_url, notice: "You cannot delete other user's post" 
+    else
     @feed.destroy
     respond_to do |format|
       format.html { redirect_to feeds_url, notice: 'Feed was successfully destroyed.' }
       format.json { head :no_content }
+      end
     end
   end
 
