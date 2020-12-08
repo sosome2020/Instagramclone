@@ -16,13 +16,9 @@
       <tr>
         <td><%=image_tag f.feed.image.url%></td>
           <td><%= f.feed.user.name %></td>
-
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
-
-
 <button type="button" class="btn btn-success"><%= link_to 'Return to the feeds', feeds_path %></button>
