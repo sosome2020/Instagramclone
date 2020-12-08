@@ -24,6 +24,7 @@ class FeedsController < ApplicationController
     @feed.user_id=current_user.id
     respond_to do |format|
       if @feed.save
+        FeedMailer.feed_mail(@feed).deliver
         format.html { redirect_to @feed, notice: 'Feed was successfully created.' }
         format.json { render :show, status: :created, location: @feed }
       else
@@ -51,7 +52,7 @@ class FeedsController < ApplicationController
 
   def destroy
     if current_user.id != @feed.user.id
-      redirect_to feeds_url, notice: "You cannot delete other user's post" 
+      redirect_to feeds_url, notice: "You cannot delete other user's post"
     else
     @feed.destroy
     respond_to do |format|
