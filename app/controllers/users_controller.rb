@@ -18,6 +18,9 @@ class UsersController < ApplicationController
   end
 
   def edit
+    if current_user.id != @user.id
+      redirect_to feeds_url, notice: "Access denied"
+    end
   end
 
   def update
